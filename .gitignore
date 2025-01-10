@@ -1,0 +1,70 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+.ng/               # Temporary build outputs for watch mode
+
+# Node
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*         # Local history extensions
+
+# Environment variables
+src/environments/environment*.ts  # Ignore environment files with sensitive information
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+*.tsbuildinfo       # TypeScript build cache files
+*.map               # Source map files (optional if you don’t want them in production builds)
+*.bak               # Backup files
+*.tmp
+*.pid
+*.seed
+*.pid.lock
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+.npm/
+*.swp
+*.swx
+
+# Testing
+/karma.conf.js
+/protractor.conf.js
+junit-report.xml
+
+# Firebase and Deployment
+.firebase/
+.firebaserc
