@@ -11,6 +11,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { routes } from './app.routes';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
+import { ApiService } from './services/api.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
     RouterModule.forRoot(routes),  // Import RouterModule and configure with appRoutes
     CommonModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

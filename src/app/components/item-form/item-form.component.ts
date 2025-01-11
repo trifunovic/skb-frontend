@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-item-form',
-  standalone: false,  // Ensure this is set to standalone if using standalone components
+  standalone : false,
   templateUrl: './item-form.component.html',
   styleUrls: ['./item-form.component.scss'],
 })
 export class ItemFormComponent {
-  public item = { name: '', description: '' };
+  item = { name: '', description: '' };
 
-  constructor() { }
+  constructor(private apiService: ApiService) {}
 
-  onSubmit() {
-    console.log('Form submitted', this.item);
+  onSubmit(): void {
+    this.apiService.createItem(this.item).subscribe((response) => {
+      console.log('Item created:', response);
+    });
   }
 }
