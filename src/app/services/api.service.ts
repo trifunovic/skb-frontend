@@ -17,4 +17,16 @@ export class ApiService {
   getItems(): Observable<any> {
     return this.http.get(`${this.apiUrl}/items/`);
   }
+
+  searchItems(query: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/search/`, {
+      headers: {
+        Authorization: 'my-secure-api-key',  // Replace with your actual API key
+        'accept': 'application/json'
+      },
+      params: {
+        query: query  // Send the search query as a URL parameter
+      }
+    });
+  }
 }

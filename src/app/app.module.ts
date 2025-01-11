@@ -13,6 +13,7 @@ import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
 import { ApiService } from './services/api.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';  // Use the new approach
+import { ItemSearchComponent } from './components/item-search/item-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     HomeComponent,
     DashboardComponent,
     ItemListComponent,
-    ItemFormComponent
+    ItemFormComponent,
+    ItemSearchComponent
   ],
   imports: [
     BrowserModule,

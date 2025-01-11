@@ -1,0 +1,28 @@
+<div class="search-container">
+  <h2>Search Items</h2>
+  <div class="search-form">
+    <input
+      type="text"
+      [(ngModel)]="query"
+      placeholder="Enter search query"
+      name="query"
+      required
+    />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <div *ngIf="results.length > 0">
+    <h3>Search Results</h3>
+    <ul>
+      <li *ngFor="let result of results">
+        <p>{{ result.content }}</p>  <!-- Adjust this based on the structure of your search result -->
+        <p><strong>Author:</strong> {{ result.metadata.author }}</p>
+        <p><strong>Category:</strong> {{ result.metadata.category }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="results.length === 0 && query.trim()">
+    <p>No results found.</p>
+  </div>
+</div>
