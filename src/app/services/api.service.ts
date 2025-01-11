@@ -6,17 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:8080';  // Your FastAPI backend URL
+  private apiUrl = 'http://127.0.0.1:8080';  // Replace with your backend URL
 
   constructor(private http: HttpClient) {}
 
-  // Fetch all items (GET request)
-  getItems(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/items/`);
+  createItem(item: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/add-document/`, item);  // POST to add document
   }
 
-  // Create a new item (POST request)
-  createItem(item: { name: string, description?: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/items/`, item);
+  getItems(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/items/`);
   }
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';  // Ensure RouterModule is imported
-import { FormsModule } from '@angular/forms';  // Import FormsModule for ngModel
-import { CommonModule } from '@angular/common';  // Import CommonModule globally
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -12,7 +12,7 @@ import { routes } from './app.routes';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
 import { ApiService } from './services/api.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';  // Use the new approach
 
 @NgModule({
   declarations: [
@@ -26,13 +26,13 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
   ],
   imports: [
     BrowserModule,
-    FormsModule,  // Add FormsModule here for ngModel binding
-    RouterModule.forRoot(routes),  // Import RouterModule and configure with appRoutes
+    FormsModule,
+    RouterModule.forRoot(routes),
     CommonModule
   ],
   providers: [
     ApiService,
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi())  // Automatically adds interceptors from DI
   ],
   bootstrap: [AppComponent]
 })

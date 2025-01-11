@@ -1,11 +1,19 @@
 <div class="item-form">
   <h2>Create Item</h2>
   <form (ngSubmit)="onSubmit()">
-    <label for="name">Name:</label>
-    <input type="text" id="name" [(ngModel)]="item.name" name="name" required>
+    <label for="id">Item ID:</label>
+    <input type="text" id="id" [(ngModel)]="item.id" name="id" required>
 
-    <label for="description">Description:</label>
-    <input type="text" id="description" [(ngModel)]="item.description" name="description">
+    <label for="content">Content:</label>
+    <textarea id="content" [(ngModel)]="item.content" name="content" required></textarea>
+
+    <div class="metadata">
+      <label for="author">Author:</label>
+      <input type="text" id="author" [(ngModel)]="item.metadata.author" name="author">
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" [(ngModel)]="item.metadata.category" name="category">
+    </div>
 
     <button type="submit">Submit</button>
   </form>
